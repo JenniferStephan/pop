@@ -9,7 +9,7 @@ import utils from "./utils";
 
 class Import extends React.Component {
   parseFiles(files, encoding) {
-    return new Promise((resolve, reject) => {
+    return new Promise(async (resolve, reject) => {
       var file = files.find(
         file => ("" + file.name.split(".").pop()).toLowerCase() === "txt"
       );
@@ -18,42 +18,51 @@ class Import extends React.Component {
         return;
       }
 
-      utils.readFile(file, encoding, res => {
-        const importedNotices = utils
-          .parseAjoutPilote(res, Joconde)
-          .map(value => {
-            if (!value.MUSEO && this.props.museofile) {
-              value.MUSEO = this.props.museofile;
-            }
-            return value;
-          })
-          .map(value => new Joconde(value));
+      const res = await utils.readFile(file, encoding);
+      
+      const importedNotices = utils
+        .parseAjoutPilote(res, Joconde)
+        .map(value => {
+          if (!value.MUSEO && this.props.museofile) {
+            value.MUSEO = this.props.museofile;
+          }
+          return value;
+        })
+        .map(value => new Joconde(value));
 
-        const filesMap = {};
-        for (var i = 0; i < files.length; i++) {
-          //Sometimes, name is the long name with museum code, sometimes its not... The easiest way I found was to transform long name to short name each time I get a file name
-          filesMap[Joconde.convertLongNameToShort(files[i].name)] = files[i];
-        }
+      const filesMap = {};
+      for (var i = 0; i < files.length; i++) {
+        //Sometimes, name is the long name with museum code, sometimes its not... The easiest way I found was to transform long name to short name each time I get a file name
+        filesMap[Joconde.convertLongNameToShort(files[i].name)] = files[i];
+      }
 
-        //ADD IMAGES
-        for (var i = 0; i < importedNotices.length; i++) {
-          const names = importedNotices[i].IMG;
-          for (var j = 0; j < names.length; j++) {
-            let img = filesMap[Joconde.convertLongNameToShort(names[j])];
-            if (!img) {
-              importedNotices[i]._errors.push(
-                `Image ${Joconde.convertLongNameToShort(names[j])} introuvable`
-              );
-            } else {
-              const shortname = Joconde.convertLongNameToShort(img.name);
-              let newImage = utils.renameFile(img, shortname);
-              importedNotices[i]._images.push(newImage);
-            }
+      //ADD IMAGES
+      for (var i = 0; i < importedNotices.length; i++) {
+        const names = importedNotices[i].IMG;
+        for (var j = 0; j < names.length; j++) {
+          let img = filesMap[Joconde.convertLongNameToShort(names[j])];
+          if (!img) {
+            importedNotices[i]._errors.push(
+              `Image ${Joconde.convertLongNameToShort(names[j])} introuvable`
+            );
+          } else {
+            const shortname = Joconde.convertLongNameToShort(img.name);
+            let newImage = utils.renameFile(img, shortname);
+            importedNotices[i]._images.push(newImage);
           }
         }
+      }
 
-        resolve({ importedNotices, fileNames: [file.name] });
-      });
+      resolve({ importedNotices, fileNames: [file.name] });
+
+      /*
+          } catch (e) {
+      reject(
+        `Erreur détectée. Vérifiez le format de votre fichier. (${JSON.stringify(
+          e
+        )} )`
+      );
+    }*/
     });
   }
   render() {

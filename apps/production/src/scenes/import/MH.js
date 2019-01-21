@@ -32,13 +32,14 @@ export default class Import extends React.Component {
 }
 
 function parseFiles(files, encoding) {
-  return new Promise((resolve, reject) => {
-    var objectFile = files.find(file => file.name.includes(".csv"));
-    if (!objectFile) {
-      reject("Pas de fichiers .csv detecté");
-      return;
-    }
-    utils.readCSV(objectFile, "|", encoding).then(async objs => {
+  return new Promise(async (resolve, reject) => {
+    try {
+      let objectFile = files.find(file => file.name.includes(".csv"));
+      if (!objectFile) {
+        reject("Pas de fichiers .csv detecté");
+        return;
+      }
+      const objs = await utils.readCSV(objectFile, "|", encoding);
       const importedNotices = [];
       const filesMap = {};
       for (var i = 0; i < files.length; i++) {
@@ -112,7 +113,13 @@ function parseFiles(files, encoding) {
         importedNotices.push(newNotice);
       }
       resolve({ importedNotices, fileNames: [objectFile.name] });
-    });
+    } catch (e) {
+      reject(
+        `Erreur détectée. Vérifiez le format de votre fichier. (${JSON.stringify(
+          e
+        )} )`
+      );
+    }
   });
 }
 

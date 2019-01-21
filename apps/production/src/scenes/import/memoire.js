@@ -22,15 +22,15 @@ export default class Import extends React.Component {
 }
 
 function parseFiles(files, encoding) {
-  return new Promise((resolve, reject) => {
-    const errors = [];
+  return new Promise(async (resolve, reject) => {
+    try {
+      var objectFile = files.find(file => file.name.includes(".ods"));
+      if (!objectFile) {
+        reject("Pas de fichiers .ods detecté");
+        return;
+      }
 
-    var objectFile = files.find(file => file.name.includes(".ods"));
-    if (!objectFile) {
-      reject("Pas de fichiers .ods detecté");
-      return;
-    }
-    utils.readODS(objectFile).then(data => {
+      const data = await utils.readODS(objectFile);
       const notices = [];
       for (let i = 0; i < data.length; i++) {
         notices.push(new Memoire(data[i]));
@@ -52,7 +52,13 @@ function parseFiles(files, encoding) {
         }
       }
       resolve({ importedNotices: notices, fileNames: [objectFile.name] });
-    });
+    } catch (e) {
+      reject(
+        `Erreur détectée. Vérifiez le format de votre fichier. (${JSON.stringify(
+          e
+        )} )`
+      );
+    }
   });
 }
 
@@ -132,12 +138,12 @@ function readme() {
         <b>IMG est prioritaire sur NOMSN</b>, i.e. si IMG est rempli avec le
         .jpeg, alors ce champ sera utilisé par POP pour illustrer la notice. Si
         en revanche, IMG est vide, alors POP traduira le champ NOMSN renseigné
-        pour remplir automatiquement le champ IMG. <br />   <br />
+        pour remplir automatiquement le champ IMG. <br /> <br />
         <b>
           ATTENTION : une fois l'import passé, seul le champ IMG est affiché
           dans la notice développée.
         </b>
-        <br />   <br />
+        <br /> <br />
         2) Directement depuis une notice développée : je peux cliquer sur
         "Ajouter une nouvelle image" et télécharger une nouvelle image
         directement depuis mon ordinateur. La notice Mémoire reçoit alors dans

@@ -27,71 +27,87 @@ export default class Import extends React.Component {
 
 function parseFiles(files, encoding) {
   return new Promise(async (resolve, reject) => {
-    //GERTRUDE
-    var objectFile = files.find(file =>
-      file.name.includes("GERTRUDE_xmlToPALISSY_lexicovide.txt")
-    );
-    if (objectFile) {
-      const PalissyFile = files.find(file =>
+    try {
+      //GERTRUDE
+      let objectFile = files.find(file =>
         file.name.includes("GERTRUDE_xmlToPALISSY_lexicovide.txt")
       );
-      const MemoireFile = files.find(file =>
-        file.name.includes("GERTRUDE_xmlToMEMOIRE_lexicovide.txt")
-      );
-      const MerimeeFile = files.find(file =>
-        file.name.includes("GERTRUDE_xmlToMERIMEE_lexicovide.txt")
-      );
-      // const RenameFile = files.find(file => file.name.includes('GERTRUDE_xmlToRenommeIllustrations_Toutes.txt'));
-
-      if (!PalissyFile || !MemoireFile || !MerimeeFile) {
-        reject(
-          "Impossible d'importer le(s) fichier(s). Véfifiez que vous avez bien chargé les 3 fichiers suivants : GERTRUDE_xmlToPALISSY_lexicovide.txt, GERTRUDE_xmlToMEMOIRE_lexicovide.txt, GERTRUDE_xmlToMERIMEE_lexicovide.txt"
+      if (objectFile) {
+        const PalissyFile = files.find(file =>
+          file.name.includes("GERTRUDE_xmlToPALISSY_lexicovide.txt")
         );
+        const MemoireFile = files.find(file =>
+          file.name.includes("GERTRUDE_xmlToMEMOIRE_lexicovide.txt")
+        );
+        const MerimeeFile = files.find(file =>
+          file.name.includes("GERTRUDE_xmlToMERIMEE_lexicovide.txt")
+        );
+        // const RenameFile = files.find(file => file.name.includes('GERTRUDE_xmlToRenommeIllustrations_Toutes.txt'));
+
+        if (!PalissyFile || !MemoireFile || !MerimeeFile) {
+          reject(
+            "Impossible d'importer le(s) fichier(s). Véfifiez que vous avez bien chargé les 3 fichiers suivants : GERTRUDE_xmlToPALISSY_lexicovide.txt, GERTRUDE_xmlToMEMOIRE_lexicovide.txt, GERTRUDE_xmlToMERIMEE_lexicovide.txt"
+          );
+          return;
+        }
+
+        const otherFiles = files.filter(
+          file => file.name.indexOf(".xml") === -1
+        );
+        const importedNotices = await ParseGertrude(
+          PalissyFile,
+          MemoireFile,
+          MerimeeFile,
+          otherFiles,
+          encoding
+        );
+
+        for (let i = 0; i < importedNotices.length; i++) {
+          checkReference(importedNotices[i]);
+        }
+        resolve({
+          importedNotices,
+          fileNames: [PalissyFile.name, MemoireFile.name, MerimeeFile.name]
+        });
+
         return;
       }
 
+      //RENABL
+      const xmlFiles = files.filter(file => file.name.indexOf(".xml") !== -1);
       const otherFiles = files.filter(file => file.name.indexOf(".xml") === -1);
-      const importedNotices = await ParseGertrude(
-        PalissyFile,
-        MemoireFile,
-        MerimeeFile,
-        otherFiles,
-        encoding
+      if (xmlFiles.length) {
+        const importedNotices = await ParseRenabl(
+          otherFiles,
+          xmlFiles,
+          encoding
+        );
+
+        let fileNames = xmlFiles.map(e => e.name);
+        if (fileNames.length > 10) {
+          fileNames = fileNames.slice(1, 10);
+          fileNames.push(` ${xmlFiles.length - 10} supplémentaires`);
+        }
+
+        for (let i = 0; i < importedNotices.length; i++) {
+          checkReference(importedNotices[i]);
+        }
+        resolve({ importedNotices, fileNames });
+        return;
+      }
+
+      // ERROR
+      reject(
+        "Impossible d'importer le(s) fichier(s). Aucun fichier Renabl ou Gertrude détecté"
       );
-
-      for (let i = 0; i < importedNotices.length; i++) {
-        checkReference(importedNotices[i]);
-      }
-      resolve({
-        importedNotices,
-        fileNames: [PalissyFile.name, MemoireFile.name, MerimeeFile.name]
-      });
-      return;
+      
+    } catch (e) {
+      reject(
+        `Erreur détectée. Vérifiez le format de votre fichier. (${JSON.stringify(
+          e
+        )} )`
+      );
     }
-
-    //RENABL
-    const xmlFiles = files.filter(file => file.name.indexOf(".xml") !== -1);
-    const otherFiles = files.filter(file => file.name.indexOf(".xml") === -1);
-    if (xmlFiles.length) {
-      const importedNotices = await ParseRenabl(otherFiles, xmlFiles, encoding);
-
-      let fileNames = xmlFiles.map(e => e.name);
-      if (fileNames.length > 10) {
-        fileNames = fileNames.slice(1, 10);
-        fileNames.push(` ${xmlFiles.length - 10} supplémentaires`);
-      }
-
-      for (let i = 0; i < importedNotices.length; i++) {
-        checkReference(importedNotices[i]);
-      }
-      resolve({ importedNotices, fileNames });
-      return;
-    }
-
-    // ERROR
-    reject(
-      "Impossible d'importer le(s) fichier(s). Aucun fichier Renabl ou Gertrude détecté"
-    );
   });
 }
 

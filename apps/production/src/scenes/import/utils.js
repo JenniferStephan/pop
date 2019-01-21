@@ -1,14 +1,16 @@
 import XLSX from "xlsx";
 import Parse from "csv-parse";
 
-function readFile(file, encoding, cb) {
-  const reader = new FileReader();
-  reader.onload = () => {
-    cb(reader.result);
-  };
-  reader.onabort = () => console.log("file reading was aborted");
-  reader.onerror = () => console.log("file reading has failed");
-  reader.readAsText(file, encoding || "ISO-8859-1");
+function readFile(file, encoding) {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onload = () => {
+      resolve(reader.result);
+    };
+    reader.onabort = () => reject("file reading was aborted");
+    reader.onerror = () => reject("file reading has failed");
+    reader.readAsText(file, encoding || "ISO-8859-1");
+  });
 }
 
 function readODS(file, encoding) {
@@ -27,8 +29,8 @@ function readODS(file, encoding) {
         resolve(XL_row_object);
       });
     };
-    reader.onabort = () => console.log("file reading was aborted");
-    reader.onerror = () => console.log("file reading has failed");
+    reader.onabort = () => console.log("Lecture du fichier annulée");
+    reader.onerror = () => console.log("Lecture du fichier rejetée");
     reader.readAsBinaryString(file);
   });
 }
@@ -41,8 +43,8 @@ function readXML(file, encoding) {
       const xmlDoc = parser.parseFromString(reader.result, "text/xml");
       resolve(xmlDoc);
     };
-    reader.onabort = () => console.log("file reading was aborted");
-    reader.onerror = () => console.log("file reading has failed");
+    reader.onabort = () => reject("Lecture du fichier annulée");
+    reader.onerror = () => reject("Lecture du fichier rejetée");
     reader.readAsText(file, encoding || "utf-8");
   });
 }
