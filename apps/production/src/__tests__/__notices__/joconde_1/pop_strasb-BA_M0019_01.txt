@@ -1,0 +1,221 @@
+REF
+00190018851
+MUSEO
+M0019
+DOMN
+peinture
+TITR
+Saint François d'Assises
+REPR
+figure (saint François d'Assise)
+ECOL
+Italie
+AUTR
+OLIVUCCIO DI CECCARELLO (peintre)
+PAUT
+Camerino, 1365 ; Ancône, 1439 ; Documenté dans les Marches de 1390 à 1439
+ATTR
+Ancienne attribution : CARLO DA CAMERINO, Marches, fin du XIVe siècle
+TECH
+bois, feuille d'or, huile 
+DIMS
+Hauteur en cm 65.5 ; Largeur en cm 38.5
+INSC
+étiquette
+PINS
+étiquette, Au revers : "Universität Archeologie..."
+PERI
+1ère moitié 15e siècle
+LOCA
+Strasbourg ; musée des beaux-arts
+STAT
+propriété de la commune ; mode d'acquisition inconnu ; Strasbourg ; musée des beaux-arts
+INV
+44.976.0.1 ; 44.R.317 (N° récolement)
+APTN
+Université
+EXPO
+"La fioritura tardogotica nelle Marche", Palazzo Ducale, 24 luglio a ottobre -
+1998 (n°29)
+BIBL
+MOENCH, Esther, Les primitifs italiens du Musée des Beaux-Arts de Strasbourg, -
+Strasbourg, 1993 (Cat. Primitifs italiens MBA, Strasbourg, p. 14, -
+n°4)#BOSKOVITS, Miklos, Immagini da meditare. Ricerche su dipinti di tema -
+religioso nei secoli xii-xv, Milan, 1994 (p. 260, note 22, p. 268, note 26 -
+(Carlo da Camerino, fait peut-être partie du même ensemble de le Couronnement -
+de Stockholm))#in cat. expo. Urbino, 1998 (in cat. expo. Urbino, 1998, p. 121, -
+n°29)#DE MARCHI, A., "Carlo da Camerino", Primitifs et maniéristes italiens, -
+sous la dir. de G. SARTI, Paris, 2000, p. 40 (p. 40)#DE MARCHI, Andrea, -
+Pittori a Camerino nel Quattrocento, Banca delle Marche, Milan, 2002 (p. 136, -
+fig.)#MINARDI, M., "Olivuccio di Ceccarelli", Dizionario biografico degli -
+italiani, t. 79, Rome, 2013, p. 278 (p. 278)#De Giotto à Goya. Peintures -
+italiennes et espagnoles du musée des Beaux-Arts de Strasbourg -Paula -
+Goldenberg (Auteur) -Dominique Jacquot (Auteur) -Guillaume Kientz (Auteur) -
+-Michèle Lavallée (Auteur) -Esther Moench (Auteur) -Alain Roy (Auteur), -
+Strasbourg, 2017 (n°11, p. 41)
+PHOT
+© Service photographique des Musées de Strasbourg, © PLISSON 
+REFIM
+M001904_0118336_P.JPG,DS1,,0118336.JPG;M001904_0118337_P.JPG,DS1,,0118337.JPG;M-
+001904_0084098_P.JPG,DS1,,0084098.JPG;M001904_0023281_P.JPG,DS1,,0023281.JPG
+COPY
+© Strasbourg, musée des beaux-arts, © Service des musées de France, -
+2018
+DESC
+Huile sur bois. Fond d'or
+PREP
+Saint François est représenté dans une pose -
+semi-frontale. Il tient dans sa main gauche un livre ainsi que son vêtement, -
+tandis qu'il tient une croix dans la main droite. Ses stigmates sont visibles -
+surtout sur sa main droite de laquelle coule du sang. Il est représenté sur un -
+fond d'or entre deux colonnettes et sous une voute en ogive.
+IMAGE
+Oui
+REDA
+MARCLE Céline
+LIEUX
+Italie, Marches (lieu de création)
+//
+REF
+00190009215
+MUSEO
+M0019
+DOMN
+peinture
+TITR
+Saint Jérôme pénitent
+AUTR
+anonyme
+ECOL
+Espagne ; Italie
+TECH
+huile, toile
+DIMS
+Hauteur en cm 39.3 ; Largeur en cm 32
+PERI
+17e siècle
+LOCA
+Strasbourg ; musée des beaux-arts
+STAT
+propriété de la commune ; mode d'acquisition inconnu ; Strasbourg ; musée des beaux-arts
+INV
+44.976.0.12 ; 44.R.352 (N° récolement)
+BIBL
+De Giotto à Goya. Peintures italiennes et espagnoles du musée des Beaux-Arts -
+de Strasbourg -Paula Goldenberg (Auteur) -Dominique Jacquot (Auteur) -
+-Guillaume Kientz (Auteur) -Michèle Lavallée (Auteur) -Esther Moench (Auteur) -
+-Alain Roy (Auteur), Strasbourg, 2017 (n°149, p. 273 )
+PHOT
+© Service photographique des Musées de Strasbourg, © PLISSON, © BACHER
+REPR
+figure (saint Jérôme, pénitent, homme, nudité, crâne)
+REFIM
+M001904_0119760_P.JPG,DS1,,0119760.JPG;M001904_0119762_P.JPG,DS1,,0119762.JPG;M-
+001904_0022161_P.JPG,DS1,,0022161.JPG
+COPY
+© Strasbourg, musée des beaux-arts, © Service des musées de France, -
+2018
+DESC
+Huile sur toile
+PREP
+Saint Jérôme est vu de trois quarts, légèrement courbé en -
+avant, tenant un crâne dans sa main gauche.
+IMAGE
+Oui
+REDA
+MARCLE Céline
+LIEUX
+Espagne (lieu de création) ; Italie (lieu de création)
+//
+REF
+00190018921
+MUSEO
+M0019
+DOMN
+peinture
+TITR
+La Vierge à l'Enfant entre saint Jean Baptiste et sainte Madeleine (et Sainte -
+Madeleine)
+AUTR
+PIERO DI COSIMO (peintre)
+PAUT
+PIERO DI COSIMO : Florence, 1461/62, ? ; Florence, 1521 ; nationalité : Italienne
+ECOL
+Italie, Florence
+TECH
+huile, bois
+DIMS
+Diamètre en cm 95.5 cm (avec cadre 115 cm)
+INSC
+cachet de cire
+PINS
+cachet de cire, Au revers : Cachet royal (1806-1835) en usage sous les rois -
+Max Ier Joseph et Ludwig Ier
+PERI
+4e quart 15e siècle
+MILL
+1480
+LOCA
+Strasbourg ; musée des beaux-arts
+STAT
+propriété de la commune ; achat ; Strasbourg ; musée des beaux-arts
+DACQ
+1981 acquis ; 1982 entrée matérielle
+INV
+44.981.1.1 ; 44.R.32 (N° récolement)
+APTN
+STUBER, Frédéric Auguste, 1844, (Vendu en 1844 par les frères Manega de Gênes -
+à l'architecte strasbourgeois Stuber) ; STEINLEN, Strasbourg ; Collection -
+Steinlen
+EXPO
+"Piero di Cosimo 1462-1522. Pittore eccentrico fra Rinascimento e Maniera" -
+(Galleria degli Uffizi) (n°13)#"Piero di Cosimo. The Poetry of Painting in -
+Renaissance Florence" (NGA) (n°10)
+BIBL
+MOENCH, Esther, Les primitifs italiens du Musée des Beaux-Arts de Strasbourg, -
+Strasbourg, 1993 (p. 64, n° 28)#FORLANI TEMPESTI, A. et CAPRETTI, E., Piero di -
+Cosimo, Florence, 1996 (p. 107-108, n°15)#JACQUOT, Dominique, Le musée des -
+Beaux-Arts de Strasbourg : cinq siècles de peinture, Strasbourg, 2006 (repr. -
+p. 50.)#GERONIMUS, D., Piero di Cosimo: Visions, Beautiful and Atrange, New -
+Haven, 2006 (p. 172)#TAZARTES, M., Piero di Cosimo: ingegno astratto e -
+difforme, Florence, 2010 (p. 71-72)#De Giotto à Goya. Peintures italiennes et -
+espagnoles du musée des Beaux-Arts de Strasbourg -Paula Goldenberg (Auteur) -
+-Dominique Jacquot (Auteur) -Guillaume Kientz (Auteur) -Michèle Lavallée -
+(Auteur) -Esther Moench (Auteur) -Alain Roy (Auteur), Strasbourg, 2017 (n°38, -
+p. 88-89)
+PHOT
+© Service photographique des Musées de Strasbourg, © PLISSON
+REPR
+paysage, scène biblique (Vierge à l'Enfant, draperie, vase, bâton)
+REFIM
+M001904_0118842_P.JPG,DS1,,0118842.JPG;M001904_0110136_P.JPG,DS1,,0110136.JPG;M-
+001904_0110137_P.JPG,DS1,,0110137.JPG;M001904_0012650_P.JPG,DS1,,0012650.JPG
+COPY
+© Strasbourg, musée des beaux-arts, © Service des musées de France, -
+2018
+DESC
+Huile sur bois
+PREP
+Tableau rond (tondo) représentant LA VIERGE, SAINT -
+JEAN-BAPTISTE, UNE SAINTE ET L'ENFANT JESUS devant un paysage montagneux avec -
+cours d'eau median se détachant sur un ciel bleu avec nuage gris. La Vierge, -
+assise au centre, est vêtue d'une robe gris foncé, avec liseré rouge autour du -
+cou et d'un manteau bleu à lisières brodées d'or, doublé de jaune. Elle porte -
+sur sa tête auréolée, un voile transparent qui descend en diagonale le long de -
+son buste. Elle tient sur ses genoux l'Enfant Jésus, nu sauf pour une -
+draperie, qui lève de sa main droite le couvercle d'un petit flacon en métal -
+que lui tend la Sainte ; celle-ci est debout à la droite de la Vierge ; elle -
+est vêtue d'une robe rouge à liserés brodés d'or, d'une écharpe verte et or et -
+d'un manteau brun. Saint Jean-Baptiste, debout à la gauche de la Vierge, la -
+tête auréolée comme une sainte, est vêtu d'une melote et d'un manteau rouge à -
+liserés brodés d'or. Il tient dans ses mains une longue croix de bois avec un -
+phylactère en bas sur lequel est inscrit : ECCE AGN. Cadre doré carré avec -
+écoinçons intérieurs formant cercle, orné de motifs néo-classiques de style -
+"Empire".
+IMAGE
+Oui
+REDA
+MARCLE Céline
+LIEUX
+Italie (lieu de création)
+//
