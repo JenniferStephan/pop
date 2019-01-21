@@ -29,8 +29,8 @@ function readODS(file, encoding) {
         resolve(XL_row_object);
       });
     };
-    reader.onabort = () => console.log("Lecture du fichier annulée");
-    reader.onerror = () => console.log("Lecture du fichier rejetée");
+    reader.onabort = () => reject("Lecture du fichier annulée");
+    reader.onerror = () => reject("Lecture du fichier rejetée");
     reader.readAsBinaryString(file);
   });
 }
@@ -50,8 +50,9 @@ function readXML(file, encoding) {
 }
 
 function readCSV(file, delimiter, encoding, quote) {
-  return new Promise((resolve, reject) => {
-    readFile(file, encoding, res => {
+  return new Promise(async (resolve, reject) => {
+    try {
+      const res = await readFile(file, encoding);
       const parser = Parse({
         delimiter: delimiter,
         from: 1,
@@ -59,10 +60,10 @@ function readCSV(file, delimiter, encoding, quote) {
         relax_column_count: true
       });
       const output = [];
-
+  
       let record = null;
       let header = null;
-
+  
       parser.on("readable", () => {
         while ((record = parser.read())) {
           if (!header) {
@@ -76,20 +77,22 @@ function readCSV(file, delimiter, encoding, quote) {
           output.push(obj);
         }
       });
-
+  
       // Catch any error
       parser.on("error", err => {
         reject(err.message);
       });
-
+  
       // When we are done, test that the parsed output matched what expected
       parser.on("finish", () => {
         resolve(output);
       });
-
+  
       parser.write(res);
       parser.end();
-    });
+    } catch (e) {
+      reject(e);
+    }
   });
 }
 
