@@ -179,10 +179,66 @@ export default () => (
               txt="Venise"
               params={{
                 mainSearch: "venise"
+             }}
+            />
+          </Col>
+          <Col lg="3" md="6">
+            <TopicCard
+              img={jocondeImg("joconde/5002E008037/atpico041160.jpg(")}
+              txt="Japon"
+              params={{
+                mainSearch: "Japon"
+                image: "oui"
+              }}
+            />
+          </Col>
+          <Col lg="3" md="6">
+            <TopicCard
+              img={jocondeImg("joconde/07010003109/0001554.jpg")}
+              txt="Egypte"
+              params={{
+                mainSearch: "Egypte"
+                image: "oui"
               }}
             />
           </Col>
         </Row>
+
+<h3>Artistes femme</h3>
+        <Row>
+          <Col lg="3" md="6">
+            <TopicCard
+              img={jocondeImg("joconde/000PE019139/99-002556.jpg")}
+              txt="Rosa Bonheur"
+              params={{
+                mainSearch: "Rosa bonheur"
+                image: "oui"
+              }}
+            />
+          </Col>
+          <Col lg="3" md="6">
+            <TopicCard
+              img={jocondeImg("joconde/06770000315/0001106.jpg")}
+              txt="Marguerite Gérard"
+              params={{
+                mainSearch: "Marguerite gerard"
+                image: "oui"
+             }}
+            />
+          </Col>
+          <Col lg="3" md="6">
+            <TopicCard
+              img={jocondeImg("joconde/01720000823/0002031.jpg")}
+              txt="Marie Nicolas"
+              params={{
+                mainSearch: "Marie Nicolas"
+                image: "oui"
+              }}
+            />
+          </Col>
+        </Row>
+
+
       </Container>
     </div>
   </Layout>
