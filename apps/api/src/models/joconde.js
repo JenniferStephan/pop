@@ -184,7 +184,8 @@ const Schema = new mongoose.Schema(
       default: "",
       documentation: {
         description: "Coordinateur",
-        label: "Coordinateur"
+        label: "Coordinateur",
+        deprecated: true
       }
     },
     COPY: {
@@ -574,7 +575,8 @@ const Schema = new mongoose.Schema(
       default: "",
       documentation: {
         description: "Numéro de site",
-        label: "Numéro de site"
+        label: "Numéro de site",
+        deprecated: true
       }
     },
     ONOM: {
@@ -695,7 +697,8 @@ const Schema = new mongoose.Schema(
       default: [],
       documentation: {
         description: "Rédacteur ",
-        label: "Rédacteur"
+        label: "Rédacteur",
+        deprecated: true
       }
     },
     REFIM: {
@@ -767,7 +770,8 @@ const Schema = new mongoose.Schema(
       documentation: {
         description: "Titre",
         label: "Titre",
-        opendata: true
+        opendata: true,
+        deprecated: true
       }
     },
     TOUT: {
